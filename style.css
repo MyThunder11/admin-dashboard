@@ -1,0 +1,28 @@
+:root {
+    --sidebar-color : #0284c7;
+    --content-color : #e1e1e1;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+.header {
+    grid-column: 2 / 3 ;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    grid-row: 1 / 3;
+}
+
+.content {
+    background-color: var(--content-color);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
