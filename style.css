@@ -1,10 +1,27 @@
+@font-face {
+    font-family: 'norse bold';
+    src: url(./assets/font/Norse-Bold.otf);
+}
+
 :root {
-    --sidebar-color : #0284c7;
-    --content-color : #e1e1e1;
+    --sidebar-color : #1992D3;
+    --content-color : #E2E8F0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.emoji {
+    font-size: 1.8rem;
 }
 
 .container {
     height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 6fr;
@@ -14,15 +31,229 @@
     grid-column: 2 / 3 ;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    padding: 0 15px;
+}
+
+.upper-header {
+    padding: 20px 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 18px;
+}
+
+.search {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#search-bar input {
+    height: 30px;
+    width: 30vw;
+    background-color: var(--content-color);
+    border-radius: 10px;
+    border: none;
+}
+
+.upper-header > div {
+    align-self: center;
+}
+
+.user-icon.upper {
+    scale: 0.9;
+}
+
+.username-upper {
+    font-size: 1.2rem;
+    font-size: bold;
+}
+
+.lower-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 20px;
+}
+
+.greetings {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background: url(./assets/icons8-test-account-40.png) no-repeat;
+    overflow: hidden;
+    scale: 1.2;
+}
+
+.greet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#greet-msg {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#username {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.header-buttons {
+    align-self: center;
+    display: flex;
+    gap: 15px;
+}
+
+.header-buttons button {
+    background-color: var(--sidebar-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+
 }
 
 .sidebar {
     background-color: var(--sidebar-color);
     grid-row: 1 / 3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 15px 25px;
 }
+
+.logo {
+    font-size: 1.9rem;
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid white;
+    font-family: 'norse bold';
+}
+
+.nav-1, .nav-2 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    row-gap: 15px;
+    column-gap: 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
 
 .content {
     background-color: var(--content-color);
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 10px;
+}
+
+.projects {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: 15px;
+}
+
+.projects>h2, .announcements>h2, .trending>h2 {
+    color: rgb(95, 95, 95);
+    padding-bottom: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 5px solid rgb(238, 204, 79);
+}
+
+.card>p {
+    flex: 1;
+}
+
+.card-icons {
+    align-self: flex-end;
+}
+
+.announcements {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 15px;
+}
+
+.news-section {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.news {
+    border-bottom: 1px solid gray;
+    padding: 15px 0;
+}
+
+.news p {
+    padding-top: 8px;
+    font-size: 0.7rem;
+}
+
+.news:last-child {
+    border: none;
+}
+
+.trending {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding: 15px;
+}
+
+.users {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 18px 25px;
+    border-radius: 10px;
+    
+}
+
+.user {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-self: flex-start;
+}
+
+.user img {
+    justify-self: end;
+}
+
+.card-icons img {
+    width: 20px;
+    margin: 5px;
 }
